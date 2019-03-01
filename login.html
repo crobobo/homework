@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Login</title>
+	<link rel="stylesheet" href="./css_files/auth.css">
+</head>
+<body>
+<div class="adcenter"><script src="./css_files/ggad2_728x90.js"></script></div>
+	<div class="lowin">
+		<div class="lowin-brand">
+			<img src="./image/Storm_Trooper.jpg" alt="logo">
+		</div>
+		<div class="lowin-wrapper" style="min-height: 457px;">
+			<div class="lowin-box lowin-login">
+				<div class="lowin-box-inner">
+					<form action="./login.php">
+						<p>这里是登录页</p>
+						<div class="lowin-group">
+							<label>用户名 <a href="./login.html#" class="login-back-link">返回登录？</a></label>
+							<input type="text" autocomplete="username" name="username" class="lowin-input">
+						</div>
+						<div class="lowin-group password-group" style="height: 70px;">
+							<label>密码 <a href="./login.html#" class="forgot-link">忘记密码？</a></label>
+							<input type="password" name="password" autocomplete="current-password" class="lowin-input">
+						</div>
+						<button class="lowin-btn login-btn">
+							登录
+						</button>
+
+						<div class="text-foot">
+							没有账号？ <a href="http://demo.cssmoban.com/cssthemes5/twts_195_lowin/index.html" class="register-link">注册</a>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="lowin-box lowin-register lowin-flip">
+				<div class="lowin-box-inner">
+					<form>
+						<p>这里是注册页</p>
+						<div class="lowin-group">
+							<label>名字</label>
+							<input type="text" name="name" autocomplete="name" class="lowin-input">
+						</div>
+						<div class="lowin-group">
+							<label>学号</label>
+							<input type="text" autocomplete="number" name="number" class="lowin-input">
+						</div>
+						<div class="lowin-group">
+							<label>年龄</label>
+							<input type="number" name="age" autocomplete="0" min="0" max="100" class="lowin-input">
+						</div>
+						<div class="lowin-group">
+							<label>账号</label>
+							<input type="text" name="username" autocomplete="username" class="lowin-input">
+						</div>
+						<div class="lowin-group">
+							<label>密码</label>
+							<input type="password" name="password" autocomplete="current-password" class="lowin-input">
+						</div>
+						<div class="lowin-group">
+							<label>性别</label>
+							<select class="lowin-input">
+  								<option value ="male">男</option>
+  								<option value ="female">女</option>
+								</select>
+						</div>
+						<div class="lowin-group">
+							<label>选择你的身份类型</label>
+							<select class="lowin-input">
+  								<option value ="admin">管理员</option>
+  								<option value ="user">普通用户</option>
+								</select>
+						</div>
+						<button class="lowin-btn">
+							注册
+						</button>
+
+						<div class="text-foot">
+							已经有账号了？ <a href="http://demo.cssmoban.com/cssthemes5/twts_195_lowin/index.html" class="login-link">登录</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	
+		<footer class="lowin-footer">
+			Design By 纪志鹏 1120162387 
+		</footer>
+	</div>
+
+	<script src="./css_files/auth.js"></script>
+	<script>
+		Auth.init({
+			login_url: '#login',
+			forgot_url: '#forgot'
+		});
+	</script>
+
+</body></html>
