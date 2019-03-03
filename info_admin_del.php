@@ -5,7 +5,7 @@
     $cmd_select_all="select * from info";
     $name=$_SESSION['name'];
     $number=$_SESSION['number'];
-	$cmd_select_bynum="select * from info where number=\"".$number."\"";
+    $cmd_select_bynum="select * from info where number=\"".$number."\"";
 ?>
 
 <!DOCTYPE html>
@@ -21,8 +21,7 @@
 		<div class="lowin-wrapper" style="min-height: 457px;width:70%;">
 			<div class="lowin-box">
 				<div class="lowin-box-inner" style="padding: 25px 25px 25px 25px;">
-				<?php 
-						echo "<p>欢迎你，".$name."同学，你的学号为".$number."<a href=\"./signout.php\">  注销</a></p>";
+                <?php echo "<p>欢迎你，".$name."同学，你的学号为".$number."<a href=\"./signout.php\">  注销</a></p>";
                         //session_destroy();
                         //unset($_SESSION['name']);
                         //unset($_SESSION['number']);
@@ -57,9 +56,9 @@
                                 }
                                 ?>
 							</table>
-							<p>修改信息请填写下方表格，点击修改即可</p>
+							<p>删除信息请填写下方表格，点击删除即可</p>
 							<p>
-							想要删除信息？ <a href="./info_admin_del.php">点击这里</a>
+							想要修改信息？ <a href="./info_admin.php">点击这里</a>
 							</p>
 						</div>
 				</div>
@@ -70,43 +69,14 @@
 			<div class="lowin-box">
 				<div class="lowin-box-inner">
 					<form action="./changedb.php" method="POST">
-                    <p>这里是信息修改页</p>
+                    <p>这里是删除信息页</p>
 						<div class="lowin-group">
-							<label>你要修改的名字</label>
-							<input type="text" name="name" autocomplete="name" class="lowin-input">
-						</div>
-						<div class="lowin-group">
-							<label>你要修改的学号</label>
+							<label>删除用户仅需要输入对应的学号</label>
 							<input type="text" autocomplete="number" name="number" class="lowin-input">
 						</div>
-						<div class="lowin-group">
-							<label>你要修改的年龄</label>
-							<input type="number" name="age" autocomplete="0" min="0" max="100" class="lowin-input">
-						</div>
-						<div class="lowin-group">
-							<label>你要修改的账号</label>
-							<input type="text" name="username" autocomplete="username" class="lowin-input">
-						</div>
-						<div class="lowin-group">
-							<label>你要修改的密码</label>
-							<input type="password" name="password" autocomplete="current-password" class="lowin-input">
-						</div>
-						<div class="lowin-group">
-							<label>你要修改的性别</label>
-							<select name="sex" class="lowin-input">
-  								<option value ="male">男</option>
-  								<option value ="female">女</option>
-								</select>
-						</div>
-						<div class="lowin-group">
-							<label>选择你要修改身份类型</label>
-							<select name="identity" class="lowin-input">
-  								<option value ="admin">管理员</option>
-  								<option value ="user">普通用户</option>
-								</select>
-						</div>
+						
 						<button class="lowin-btn">
-							修改
+							删除
 						</button>
 
 					</form>
@@ -118,7 +88,6 @@
 			Design By 纪志鹏 1120162387 
 		</footer>
 	</div>
-
 
 </body>
 </html>

@@ -16,12 +16,12 @@
     <link rel="stylesheet" href="./css_files/auth.css">
 </head>
 <body>
-<div class="adcenter"><script src="./css_files/ggad2_728x90.js"></script></div>
+
 	<div class="lowin">
-		<div class="lowin-wrapper" style="min-height: 457px;width:100%;">
+		<div class="lowin-wrapper" style="min-height: 457px;width:70%;">
 			<div class="lowin-box">
 				<div class="lowin-box-inner" style="padding: 25px 25px 25px 25px;">
-                <?php echo "<p>欢迎你，".$name."同学，你的学号为".$number."</p>";
+                <?php echo "<p>欢迎你，".$name."同学，你的学号为".$number."<a href=\"./signout.php\">  注销</a></p>";
                         //session_destroy();
                         //unset($_SESSION['name']);
                         //unset($_SESSION['number']);
@@ -41,18 +41,17 @@
                                 $conn=mysqli_connect("localhost",$db_username,$db_password);
                                 mysqli_select_db($conn,"userinfo");
                                 if($conn){
-                                    $data=mysqli_query($conn,$cmd_select_all);
-                                    while($row=mysqli_fetch_assoc($data)){
-                                        echo "<tr>";
-                                        echo "<th>".$row['name']."</th>";
-                                        echo "<th>".$row['number']."</th>";
-                                        echo "<th>".$row['age']."</th>";
-                                        echo "<th>".$row['username']."</th>";
-                                        echo "<th>".$row['password']."</th>";
-                                        echo "<th>".$row['sex']."</th>";
-                                        echo "<th>".$row['identity']."</th>";
-                                        echo "</tr>";
-                                    }
+                                    $data=mysqli_query($conn,$cmd_select_bynum);
+                                    $row=mysqli_fetch_assoc($data);
+                                    echo "<tr>";
+                                    echo "<th>".$row['name']."</th>";
+                                    echo "<th>".$row['number']."</th>";
+                                    echo "<th>".$row['age']."</th>";
+                                    echo "<th>".$row['username']."</th>";
+                                    echo "<th>".$row['password']."</th>";
+                                    echo "<th>".$row['sex']."</th>";
+                                    echo "<th>".$row['identity']."</th>";
+                                    echo "</tr>";
                                 }
                                 ?>
                             </table>
@@ -66,13 +65,7 @@
 		</footer>
 	</div>
 
-	<script src="./css_files/auth.js"></script>
-	<script>
-		Auth.init({
-			login_url: '#login',
-			forgot_url: '#forgot'
-		});
-	</script>
+
 
 </body>
 </html>
