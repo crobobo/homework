@@ -59,6 +59,54 @@
 						</div>
 				</div>
 			</div>
+        </div>
+        
+        <div class="lowin-wrapper" style="min-height: 457px;width:70%;">
+			<div class="lowin-box">
+				<div class="lowin-box-inner">
+					<form action="./changedb.php" method="POST">
+                    <p>这里是信息修改页</p>
+						<div class="lowin-group">
+							<label>你要修改的名字</label>
+							<input type="text" name="name" autocomplete="name" class="lowin-input">
+						</div>
+						<div class="lowin-group">
+							<label>你要修改的学号</label>
+							<input type="text" autocomplete="number" name="number" class="lowin-input">
+						</div>
+						<div class="lowin-group">
+							<label>你要修改的年龄</label>
+							<input type="number" name="age" autocomplete="0" min="0" max="100" class="lowin-input">
+						</div>
+						<div class="lowin-group">
+							<label>你要修改的账号</label>
+							<input type="text" name="username" autocomplete="username" class="lowin-input">
+						</div>
+						<div class="lowin-group">
+							<label>你要修改的密码</label>
+							<input type="password" name="password" autocomplete="current-password" class="lowin-input">
+						</div>
+						<div class="lowin-group">
+							<label>你要修改的性别</label>
+							<select name="sex" class="lowin-input">
+  								<option value ="male">男</option>
+  								<option value ="female">女</option>
+								</select>
+						</div>
+						<div class="lowin-group">
+							<label>选择你要修改身份类型</label>
+							<select name="identity" class="lowin-input">
+  								<option value ="admin">管理员</option>
+  								<option value ="user">普通用户</option>
+								</select>
+						</div>
+						<button class="lowin-btn">
+							修改
+						</button>
+
+					</form>
+				</div>
+			</div>
 		</div>
 	
 		<footer class="lowin-footer">

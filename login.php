@@ -15,16 +15,23 @@ if($conn){
     mysqli_select_db($conn,"userinfo");
     $data=mysqli_query($conn,$cmd_select_all);
     while($row=mysqli_fetch_assoc($data)){
-        if($username==$row['usename']&&$password==$row['password']){
+        if($username==$row['username']&&$password==$row['password']){
             echo $sign_true;
-            header("url=./info.php");
+            if($row['identity']=="user"){
+                header("refresh:0;url=./info.php");
+            }else{
+                header("refresh:0;url=./info_admin.php");
+            }
             $already=true;
+            session_start();
+            $_SESSION['name']=$row['name'];
+            $_SESSION['number']=$row['number'];
             break;
         }
     }
     if(!$already){
         echo $sign_false;
-        header("url=./login.html");
+        header("refresh:0;url=./login.html");
     }
 
 }
