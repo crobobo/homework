@@ -7,11 +7,19 @@
 	<link rel="stylesheet" href="./css_files/auth.css">
 </head>
 <body>
-	<div class="lowin">
+	<div class="lowin">		
 		<div class="lowin-wrapper" style="min-height: 457px,width=40%;">
 			<div class="lowin-box lowin-login">
 				<div class="lowin-box-inner">
 					<form action="./login.html">
+					<?php
+						if(isset($_COOKIE['number'])){
+							echo "</br>";
+							echo "<p style=\"color:pink;\">检测到".$_COOKIE['number']."已经登录</p>";
+							echo "<p>3秒后自动跳转</p>";
+							header("refresh:3;url=./login.php");
+						}
+					?>
 						<p>PHP是最好的语言！</p>
 						<p>                 </p>
 						<p>                  </p>
@@ -24,13 +32,6 @@
 						<p>3.网站提示信息要点击确认后页面才会进行跳转</p>
 						<p>4.网站设计使用学号作为档案唯一标识</p>
 						<p></br></p>
-						<?php
-						if(isset($_COOKIE['number'])){
-							echo "<p>检测到".$_COOKIE['number']."已经登录</p>";
-							echo "<p>2秒后自动跳转</p>";
-							header("refresh:2;url=./login.php");
-						}
-						?>
 						<button class="lowin-btn login-btn">
 							进入
 						</button>

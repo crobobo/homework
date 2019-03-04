@@ -17,12 +17,14 @@ $cmd_insert=" insert into info(name,number,age,username,password,sex,identity) v
 
 $conn=mysqli_connect("localhost",$db_username,$db_password);
 
+
 if($conn){
     mysqli_select_db($conn,"userinfo");
     $data=mysqli_query($conn,$cmd_select_all);
     while($row=mysqli_fetch_assoc($data)){
         if($number==$row['number']||$username==$row['username']){
             echo $sign_false;
+            //echo $name;
             header("refresh:0;url=./login.html");
             $already=true;
             break;
@@ -30,7 +32,9 @@ if($conn){
     }
     if(!$already){
         $data=mysqli_query($conn,$cmd_insert);
+        //echo $data;
         if($data){
+            //echo $name;
             echo $sign_true;
             header("refresh:0;url=./login.html");
         }
