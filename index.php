@@ -15,7 +15,7 @@
 					<?php
 						if(isset($_COOKIE['number'])){
 							echo "</br>";
-							echo "<p style=\"color:pink;\">检测到".$_COOKIE['number']."已经登录</p>";
+							echo "<p style=\"color:#ff6464;\">检测到".$_COOKIE['number']."已经登录 <a href=\"./signout.php\">  注销</a></p>";
 							echo "<p>3秒后自动跳转</p>";
 							header("refresh:3;url=./login.php");
 						}
